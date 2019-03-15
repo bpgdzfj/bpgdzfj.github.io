@@ -1,7 +1,5 @@
 
 
-  
-
 
 
 
@@ -18,9 +16,10 @@
   
   
   
-    <meta name="description" content="每天搬点砖，总有一天是大厦。">
+    <meta name="description" content="多tomcat 同一个浏览器 多个项目 会导致session覆盖​        一个服务器中有多个Tomcat服务器多个项目，每个服务器占用不同的端口号，当在同一个浏览器里面同时打开2个系统时，一个系统登入后另外一个session就会被覆盖，导致不能同时登入2个系统，一个系统登入后会把另外一个项目的JSESSIONID覆盖原有的JSESSIONID导致原有的session失效。
+​    ...">
   
-  <title>归档 [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>Tomcat [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -39,6 +38,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2019/03/15/css控制文字竖排/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        css控制文字竖排
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -64,7 +72,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">Archives</a>
             
@@ -110,140 +118,60 @@
     <div id="content-inner">
       
       
-  <article>
-    
+  
 
-  <div id="recent-posts">
-    <h1>归档
-    
-        <span class="posts-count">
-        共
-        3
-        
-            文章
-        
-        </span>
-    
-    </h1>
-    
-    
-        
-        
-            
-        
-        
-    
-        
-        
-        
-    
-        
-        
-        
-    
-    
-    
-        
-        
-            
-            <h3 class="archive-year-title">2019
-            
-                <span class="posts-count">
-                共
-                3
-                
-                    文章
-                
-                </span>
-            
-            </h3>
-        
-        <div class="post-title-item">
-  
-  <a href="/2019/03/15/Tomcat/">
-  
-    Tomcat
-  
-  </a>
-  <p class="page-title-sub">
-    <span id="post-title-date">3-15</span>
-    
-    <span id="post-title-categories">分类
-    
-    
+  <article id="post">
+    <h1>Tomcat</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">撰写于 2019-03-15</span>
+      
+        <span id="post-title-updated">修改于 2019-03-15</span>
       
       
-      <a href="/categories/tomcat相关/">tomcat相关</a>
-    
-    </span>
-    
-    
-    
-      <br>
+      <span id="post-title-categories">分类
       
       
-    
-  </p>
-  
-</div>
-    
         
         
-        <div class="post-title-item">
-  
-  <a href="/2019/03/15/css控制文字竖排/">
-  
-    css控制文字竖排
-  
-  </a>
-  <p class="page-title-sub">
-    <span id="post-title-date">3-15</span>
-    
-    <span id="post-title-categories">分类
-    
-    
+        <a href="/categories/tomcat相关/">tomcat相关</a>
+      
+      </span>
       
       
-      <a href="/categories/web前端/">web前端</a>
+    </p>
     
-    </span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-        
-        
-        <div class="post-title-item">
-  
-  <a href="/2019/03/14/hello-world/">
-  
-    Hello World
-  
-  </a>
-  <p class="page-title-sub">
-    <span id="post-title-date">3-14</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
-
+    <h1 id="多tomcat-同一个浏览器-多个项目-会导致session覆盖"><a href="#多tomcat-同一个浏览器-多个项目-会导致session覆盖" class="headerlink" title="多tomcat 同一个浏览器 多个项目 会导致session覆盖"></a>多tomcat 同一个浏览器 多个项目 会导致session覆盖</h1><p>​        一个服务器中有多个Tomcat服务器多个项目，每个服务器占用不同的端口号，当在同一个浏览器里面同时打开2个系统时，一个系统登入后另外一个session就会被覆盖，导致不能同时登入2个系统，一个系统登入后会把另外一个项目的JSESSIONID覆盖原有的JSESSIONID导致原有的session失效。</p>
+<p>​    JSESSIONID在第一次请求时就会创建一个，存储在Cookie  里面，由于这里cookie没有设置时长，当浏览器关闭后就会随着关闭，JSESSIONID 当第一次创建就会生成一窜字符，请求时会把它传到服务器，随后服务器会响应回客户端。</p>
+<hr>
+<p><strong>解决方法：修改服务器配置文件，在server.xm文件，加上Context标签，标签内容可以这样写：</strong></p>
+<p><img src="F:\hexo\source\images\20181024152254822.png" alt="img"></p>
+<!--添加sessionCookieName字段 参数可以随便设置一个-->
 
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多tomcat-同一个浏览器-多个项目-会导致session覆盖"><span class="toc-text">多tomcat 同一个浏览器 多个项目 会导致session覆盖</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2019/03/15/css控制文字竖排/" class="next">下一篇 css控制文字竖排 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
