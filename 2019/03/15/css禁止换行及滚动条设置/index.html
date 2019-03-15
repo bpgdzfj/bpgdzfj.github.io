@@ -16,9 +16,9 @@
   
   
   
-    <meta name="description" content="每天搬点砖，总有一天是大厦。">
+    <meta name="description" content="禁止换行：1style=" white-space:nowrap;" 滚动条样式： 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 123456::-webkit-scrollbar&#123; width: 16px; height: background-color: #f5f5f5;&#125; 定义滚动条轨道 内阴影+圆角 123456::-w...">
   
-  <title>分类 [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>css禁止换行，及设置滚动条样式 [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -37,6 +37,24 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2019/03/15/Tomcat/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Tomcat
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2019/03/15/css控制文字竖排/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        css控制文字竖排
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -76,7 +94,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">Categories</a>
             
@@ -108,20 +126,57 @@
     <div id="content-inner">
       
       
-  <article id="page">
+  
+
+  <article id="post">
+    <h1>css禁止换行，及设置滚动条样式</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">撰写于 2019-03-15</span>
+      
+        <span id="post-title-updated">修改于 2019-03-15</span>
+      
+      
+      <span id="post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/web前端/">web前端</a>
+      
+      </span>
+      
+      
+    </p>
     
-    
-      <h1 class="center-title">分类</h1>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tomcat相关/">tomcat相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a><span class="category-list-count">2</span></li></ul>
-    
+    <h1 id="禁止换行："><a href="#禁止换行：" class="headerlink" title="禁止换行："></a>禁止换行：</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">style="white-space:nowrap;"</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="滚动条样式："><a href="#滚动条样式：" class="headerlink" title="滚动条样式："></a>滚动条样式：</h2><p>/<em>定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸</em>/</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>/<em>定义滚动条轨道 内阴影+圆角</em>/</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0,0,0,0.3);</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>/<em>定义滑块 内阴影+圆角</em>/</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0,0,0,.3);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#555</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁止换行："><span class="toc-text">禁止换行：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动条样式："><span class="toc-text">滚动条样式：</span></a></li></ol></li></ol>
+  </div>
+</div>
 
   
 <nav id="pagination">
   
+    <a href="/2019/03/15/Tomcat/" class="prev">&larr; 上一篇 Tomcat</a>
+  
 
   
 
+  
+    <a href="/2019/03/15/css控制文字竖排/" class="next">下一篇 css控制文字竖排 &rarr;</a>
   
 </nav>
 
