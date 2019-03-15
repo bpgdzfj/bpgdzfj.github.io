@@ -123,12 +123,12 @@
   <article id="post">
     <h1>Tomcat</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-15</span>
+      <span id="post-title-date">Created at 2019-03-15</span>
       
-        <span id="post-title-updated">修改于 2019-03-15</span>
+        <span id="post-title-updated">Updated at 2019-03-15</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -144,15 +144,15 @@
 <p>​    JSESSIONID在第一次请求时就会创建一个，存储在Cookie  里面，由于这里cookie没有设置时长，当浏览器关闭后就会随着关闭，JSESSIONID 当第一次创建就会生成一窜字符，请求时会把它传到服务器，随后服务器会响应回客户端。</p>
 <hr>
 <p><strong>解决方法：修改服务器配置文件，在server.xm文件，加上Context标签，标签内容可以这样写：</strong></p>
-<p><img src="F:\hexo\source\images\20181024152254822.png" alt="img"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"ROOT"</span> <span class="attr">sessionCookieName</span>=<span class="string">"projectName"</span>&gt;</span><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <!--添加sessionCookieName字段 参数可以随便设置一个-->
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多tomcat-同一个浏览器-多个项目-会导致session覆盖"><span class="toc-text">多tomcat 同一个浏览器 多个项目 会导致session覆盖</span></a></li></ol>
   </div>
 </div>
@@ -164,7 +164,7 @@
   
 
   
-    <a href="/2019/03/15/css控制文字竖排/" class="next">下一篇 css控制文字竖排 &rarr;</a>
+    <a href="/2019/03/15/css控制文字竖排/" class="next">Next post css控制文字竖排 &rarr;</a>
   
 </nav>
 
