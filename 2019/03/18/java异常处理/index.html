@@ -122,12 +122,12 @@
   <article id="post">
     <h1>Java异常处理的五个关键字</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-18</span>
+      <span id="post-title-date">Created at 2019-03-18</span>
       
-        <span id="post-title-updated">修改于 2019-03-18</span>
+        <span id="post-title-updated">Updated at 2019-03-18</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -138,7 +138,7 @@
       
       
       <span id="post-title-tags">
-      标签
+      Tag
       
       
         
@@ -170,13 +170,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">            Scanner input=<span class="keyword">new</span> Scanner(System.in);  </span><br><span class="line">            <span class="keyword">try</span>&#123; <span class="comment">//监听代码块  </span></span><br><span class="line">            <span class="keyword">int</span> a=input.nextInt();  </span><br><span class="line">            <span class="keyword">int</span> b=input.nextInt();  </span><br><span class="line">            <span class="keyword">double</span> sum=a/b;   </span><br><span class="line">            System.out.println(sum);  </span><br><span class="line">        &#125; <span class="keyword">catch</span>(InputMismatchException e)&#123; <span class="comment">//catch（异常类型 异常名称）  </span></span><br><span class="line">            System.out.println(<span class="string">"只能输入数字"</span>);  </span><br><span class="line">            <span class="keyword">throw</span> e; <span class="comment">//抛出catch捕捉到的异常  </span></span><br><span class="line">        &#125;<span class="keyword">catch</span>(ArithmeticException e)&#123;  </span><br><span class="line">            System.out.println(<span class="string">"分母不能为0"</span>);  </span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"分母为0抛出异常"</span>); <span class="comment">//抛出ArithmeticException异常  </span></span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123; <span class="comment">//Exception是所有异常的父类  </span></span><br><span class="line">            System.out.println(<span class="string">"发生了其他异常"</span>);  </span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123; <span class="comment">//不管是否出现异常，finally一定会被执行  </span></span><br><span class="line">            System.out.println(<span class="string">"程序结束"</span>);  </span><br><span class="line">        &#125;   </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码例子：（throws）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Throws</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">out</span><span class="params">()</span> <span class="keyword">throws</span> ArithmeticException</span>&#123; <span class="comment">//声明可能要抛出的异常，可以有多个异常,逗号隔开</span></span><br><span class="line">		<span class="keyword">try</span>&#123; <span class="comment">//监听代码块</span></span><br><span class="line">            <span class="keyword">int</span> sum=a/b;</span><br><span class="line">            System.out.println(sum);</span><br><span class="line">		&#125;<span class="keyword">catch</span>(ArithmeticException e)&#123;</span><br><span class="line">			System.out.println(<span class="string">"分母不能为0"</span>);</span><br><span class="line">		&#125;<span class="keyword">finally</span>&#123; <span class="comment">//不管是否出现异常，finally一定会被执行</span></span><br><span class="line">			System.out.println(<span class="string">"程序结束"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Throws t=<span class="keyword">new</span> Throws();</span><br><span class="line">			t.out(); <span class="comment">//调用方法</span></span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException(<span class="string">"分母为0抛出异常"</span>); <span class="comment">//由调用的方法决定是否要抛出异常</span></span><br><span class="line">			<span class="comment">/* 第二种抛出方式*/</span></span><br><span class="line">            <span class="comment">//ArithmeticException a=new ArithmeticException("分母为0抛出异常");</span></span><br><span class="line">            <span class="comment">//throw a;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li></ol>
   </div>
 </div>
@@ -188,7 +188,7 @@
   
 
   
-    <a href="/2019/03/18/slor基础配置/" class="next">下一篇 solr基础配置（结构化基于mysql） &rarr;</a>
+    <a href="/2019/03/18/slor基础配置/" class="next">Next post solr基础配置（结构化基于mysql） &rarr;</a>
   
 </nav>
 
