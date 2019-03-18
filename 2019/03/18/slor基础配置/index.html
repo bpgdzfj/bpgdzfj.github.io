@@ -1,0 +1,369 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="中文">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="夏亚">
+  
+  
+  
+  
+    <meta name="description" content="css控制文字竖排下载地址12进入官网下载页：http://mirror.bit.edu.cn/apache/lucene/solr/7.7.0/下载zip压缩包
+安装solr把solr-7.7.0.zip 安装文件解压
+solr是自带jetty容器的，我们都不需要tomcat，直接用自带的jetty即可。（当然如果你有更多定制化需求，也可以用tomcat做容器）
+启动solr1.进入bin...">
+  
+  <title>solr基础配置（结构化基于mysql） [ 进入 洋山芋·土豆 小世界 ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2019/03/15/Tomcat/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Tomcat
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onclick="openUserCard()">
+          <img id="avatar" src="/images/header.jpg">
+          <div id="homelink">进入 洋山芋·土豆 小世界</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/bpgdzfj">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>solr基础配置（结构化基于mysql）</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">Created at 2019-03-18</span>
+      
+        <span id="post-title-updated">Updated at 2019-03-18</span>
+      
+      
+      <span id="post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/搜索引擎/">搜索引擎</a>
+      
+      </span>
+      
+      
+    </p>
+    
+    <h1 id="css控制文字竖排"><a href="#css控制文字竖排" class="headerlink" title="css控制文字竖排"></a>css控制文字竖排</h1><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进入官网下载页：http://mirror.bit.edu.cn/apache/lucene/solr/7.7.0/</span><br><span class="line">下载zip压缩包</span><br></pre></td></tr></table></figure>
+<h2 id="安装solr"><a href="#安装solr" class="headerlink" title="安装solr"></a>安装solr</h2><p>把solr-7.7.0.zip 安装文件解压</p>
+<p>solr是自带jetty容器的，我们都不需要tomcat，直接用自带的jetty即可。（当然如果你有更多定制化需求，也可以用tomcat做容器）</p>
+<h2 id="启动solr"><a href="#启动solr" class="headerlink" title="启动solr"></a>启动solr</h2><p>1.进入bin目录下</p>
+<p>2.按住shift右键打开cmd</p>
+<p>3.输入solr start回车启动solr（solr默认启动8983端口，若想用其他端口启动solr start -p port）</p>
+<p>4.浏览器访问solr管理界面（<a href="http://localhost:8983）" target="_blank" rel="noopener">http://localhost:8983）</a></p>
+<p>能打开solr管理界面那么就启动成功，否则查看solr日志。</p>
+<h2 id="仓库配置"><a href="#仓库配置" class="headerlink" title="仓库配置"></a>仓库配置</h2><p>1.初始化的sorl服务是没有core的（也就是本地仓库），我们需要新建一个。</p>
+<p>2.点击Core Admin，进入新增仓库界面。</p>
+<p>3.填写仓库名点击新增会报错，报错信息提示缺少配置文件，我们进入…\solr-7.7.0\server\solr目录可以看到刚刚新增的仓库。我们进入…\solr-7.7.0\example\example-DIH\solr\db目录将下面的conf文件拷贝到我们的仓库下面。</p>
+<p>4.回到浏览器，重新点击新增按钮，新增core成功！</p>
+<h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><h3 id="JAR包准备"><a href="#JAR包准备" class="headerlink" title="JAR包准备"></a>JAR包准备</h3><p>1.数据库驱动包，此处使用mysql驱动（mysql-connector-java-5.1.34.jar）</p>
+<p>2.solr-dataimporthandler-7.7.0.jar和solr-dataimporthandler-extras-7.7.0.jar</p>
+<p>将以上三个jar放入…\solr-7.7.0\server\solr-webapp\webapp\WEB-INF\lib目录下</p>
+<h3 id="配置文件准备"><a href="#配置文件准备" class="headerlink" title="配置文件准备"></a>配置文件准备</h3><p>1.修改…\solr-7.7.0\server\solr\demo1\conf目录下db-data-config.xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dataConfig</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--配置数据源 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">driver</span>=<span class="string">"com.mysql.jdbc.Driver"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">url</span>=<span class="string">"jdbc:mysql://ip:port/yourname?charactorEncoding=utf-8"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">user</span>=<span class="string">"username"</span> <span class="attr">password</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">document</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">entity</span> <span class="attr">name</span>=<span class="string">"building"</span> <span class="attr">query</span>=<span class="string">"select id ,bui_name,longitude,latitude,address,'base_building' as tablename,1 as type,'建筑' as typeName from base_building  where length(longitude)&gt;0"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">name</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"bui_name"</span> <span class="attr">name</span>=<span class="string">"name"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"address"</span> <span class="attr">name</span>=<span class="string">"address"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"longitude"</span> <span class="attr">name</span>=<span class="string">"x"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"latitude"</span> <span class="attr">name</span>=<span class="string">"y"</span> /&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"tablename"</span> <span class="attr">name</span>=<span class="string">"tablename"</span> /&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"type"</span> <span class="attr">name</span>=<span class="string">"type"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">field</span> <span class="attr">column</span>=<span class="string">"typeName"</span> <span class="attr">name</span>=<span class="string">"typeName"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">entity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">document</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dataConfig</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置说明：</p>
+<p>dataSource–&gt;数据库连接，用户名密码配置</p>
+<p>entity–&gt;sql定义</p>
+<p>field–&gt;字段定义，column对应数据库字段，name对应solr的索引字段名</p>
+<p>2.修改同目录下的managed-schema文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span> <span class="attr">required</span>=<span class="string">"true"</span> <span class="attr">multiValued</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"address"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"x"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"y"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"tablename"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"type"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"typeName"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<p>如果你的表主键id不是叫id，那么你定义的field需要指定<strong>required=”true”</strong>,并把默认的id的required=”true”属性去掉，</p>
+<p>并把<uniquekey>id</uniquekey>修改成你的主键id值，否则数据导入不进去。</p>
+<h2 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h2><p>重启solr</p>
+<p>1.数据导入</p>
+<p><img src="F:\hexo\public\images\001.png" alt="001"></p>
+<p><img src="F:\hexo\public\images\002.png" alt></p>
+<p>数据导入完成后查询数据：</p>
+<p><img src="F:\hexo\public\images\003.png" alt></p>
+<p>查看导入的数据。</p>
+<p>说明：solr中的索引字段名取决于你在managed-schema中如何配置定义。</p>
+<p>另外，大家配置的时候注意，不需要进行索引或者存储的字段要配置成false，节省资源空间。</p>
+<p>2.数据清空</p>
+<p><img src="F:\hexo\public\images\004.png" alt></p>
+<p>此时再去查询，就看到数据都已经清空。</p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css控制文字竖排"><span class="toc-text">css控制文字竖排</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载地址"><span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装solr"><span class="toc-text">安装solr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动solr"><span class="toc-text">启动solr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#仓库配置"><span class="toc-text">仓库配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库配置"><span class="toc-text">数据库配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAR包准备"><span class="toc-text">JAR包准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件准备"><span class="toc-text">配置文件准备</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据导入"><span class="toc-text">数据导入</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2019/03/15/Tomcat/" class="next">Next post Tomcat &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by 夏亚 using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="/images/header.jpg">
+    <p id="description">每天搬点砖，总有一天是大厦。</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/bpgdzfj">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://weibo.com/u/5092895966">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="mailto:wulidan0530@live.com">
+        
+          M
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
