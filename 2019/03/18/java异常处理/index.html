@@ -131,12 +131,12 @@
   <article id="post">
     <h1>Java异常处理的五个关键字</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-18</span>
+      <span id="post-title-date">Created at 2019-03-18</span>
       
-        <span id="post-title-updated">修改于 2019-03-18</span>
+        <span id="post-title-updated">Updated at 2019-03-18</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -147,7 +147,7 @@
       
       
       <span id="post-title-tags">
-      标签
+      Tag
       
       
         
@@ -182,10 +182,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li></ol>
   </div>
 </div>
@@ -193,13 +193,13 @@
   
 <nav id="pagination">
   
-    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; 上一篇 Java中如何跳出当前的多重嵌套循环</a>
+    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; Prev post Java中如何跳出当前的多重嵌套循环</a>
   
 
   
 
   
-    <a href="/2019/03/18/slor基础配置/" class="next">下一篇 solr基础配置（结构化基于mysql） &rarr;</a>
+    <a href="/2019/03/18/slor基础配置/" class="next">Next post solr基础配置（结构化基于mysql） &rarr;</a>
   
 </nav>
 
@@ -213,9 +213,9 @@
     <div id="donate_board" class="donate_bar center">
         <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
         <span class="donate_txt">
-           ↑<br>
-           喜欢文章就打赏一包辣条吧！
-        </span>
+           &uarr;<br>
+           <%=theme.donate_message%>
+        </%=theme.donate_message%></span>
         <br>
       </div>  
     <div id="donate_guide" class="donate_bar center hidden">
@@ -231,11 +231,10 @@
                 <img src="<%- theme.root_url %><%=theme.Alipay%>"
                 <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
         -->
-        <!-- 支付宝打赏图案 
-        <img src="/images/aipay.jpg" alt="支付宝打赏"> -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/aipay.jpg" alt="支付宝打赏"> 
         <!-- 微信打赏图案 -->
         <img src="/images/wechat.jpg"" alt="微信打赏">
-
     </div>
     <script type="text/javascript">
         document.getElementById('btn_donate').onclick = function(){
@@ -365,6 +364,10 @@ var turnoffBackgroundImage = false;
 
 
 
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+  
 var backgroundColor = "34495E";
 
 $(".fancybox-thumb").fancybox({
@@ -403,7 +406,7 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
-</body>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 

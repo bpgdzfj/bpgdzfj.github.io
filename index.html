@@ -204,6 +204,10 @@ var turnoffBackgroundImage = false;
 
 
 
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+  
 var backgroundColor = "34495E";
 
 $(".fancybox-thumb").fancybox({
@@ -242,7 +246,7 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
+
 
 </html>
 

@@ -39,11 +39,11 @@
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2019/03/15/css禁止换行及滚动条设置/">
+      <a href="/2019/03/15/Tomcat/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        css禁止换行，及设置滚动条样式
+        Tomcat
       </div>
     </div>
   
@@ -123,12 +123,12 @@
   <article id="post">
     <h1>css控制文字竖排</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-15</span>
+      <span id="post-title-date">Created at 2019-03-15</span>
       
-        <span id="post-title-updated">修改于 2019-03-15</span>
+        <span id="post-title-updated">Updated at 2019-03-15</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -144,10 +144,10 @@
 <h2 id="垂直居中："><a href="#垂直居中：" class="headerlink" title="垂直居中："></a>垂直居中：</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-class">.subwrap</span>&#123;</span><br><span class="line">	<span class="attribute">display</span>: table-cell;</span><br><span class="line">	<span class="attribute">vertical-align</span>: middle;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css控制文字竖排"><span class="toc-text">css控制文字竖排</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文字竖排"><span class="toc-text">文字竖排</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垂直居中："><span class="toc-text">垂直居中：</span></a></li></ol></li></ol>
   </div>
 </div>
@@ -155,7 +155,7 @@
   
 <nav id="pagination">
   
-    <a href="/2019/03/15/css禁止换行及滚动条设置/" class="prev">&larr; 上一篇 css禁止换行，及设置滚动条样式</a>
+    <a href="/2019/03/15/Tomcat/" class="prev">&larr; Prev post Tomcat</a>
   
 
   
@@ -173,9 +173,9 @@
     <div id="donate_board" class="donate_bar center">
         <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
         <span class="donate_txt">
-           ↑<br>
-           喜欢文章就打赏一包辣条吧！
-        </span>
+           &uarr;<br>
+           <%=theme.donate_message%>
+        </%=theme.donate_message%></span>
         <br>
       </div>  
     <div id="donate_guide" class="donate_bar center hidden">
@@ -191,11 +191,10 @@
                 <img src="<%- theme.root_url %><%=theme.Alipay%>"
                 <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
         -->
-        <!-- 支付宝打赏图案 
-        <img src="/images/aipay.jpg" alt="支付宝打赏"> -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/aipay.jpg" alt="支付宝打赏"> 
         <!-- 微信打赏图案 -->
         <img src="/images/wechat.jpg"" alt="微信打赏">
-
     </div>
     <script type="text/javascript">
         document.getElementById('btn_donate').onclick = function(){
@@ -325,6 +324,10 @@ var turnoffBackgroundImage = false;
 
 
 
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+  
 var backgroundColor = "34495E";
 
 $(".fancybox-thumb").fancybox({
@@ -363,7 +366,7 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
-</body>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 

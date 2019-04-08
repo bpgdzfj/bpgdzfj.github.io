@@ -38,21 +38,21 @@
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2019/03/15/Tomcat/">
+      <a href="/2019/03/18/slor基础配置/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        Tomcat
+        solr基础配置（结构化基于mysql）
       </div>
     </div>
   
   
     <div class="item next">
-      <a href="/2019/03/15/css控制文字竖排/">
+      <a href="/2019/03/15/Tomcat/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        css控制文字竖排
+        Tomcat
       </div>
     </div>
   
@@ -131,12 +131,12 @@
   <article id="post">
     <h1>css禁止换行，及设置滚动条样式</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-15</span>
+      <span id="post-title-date">Created at 2019-03-15</span>
       
-        <span id="post-title-updated">修改于 2019-03-15</span>
+        <span id="post-title-updated">Updated at 2019-03-15</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -159,10 +159,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁止换行："><span class="toc-text">禁止换行：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动条样式："><span class="toc-text">滚动条样式：</span></a></li></ol></li></ol>
   </div>
 </div>
@@ -170,13 +170,13 @@
   
 <nav id="pagination">
   
-    <a href="/2019/03/15/Tomcat/" class="prev">&larr; 上一篇 Tomcat</a>
+    <a href="/2019/03/18/slor基础配置/" class="prev">&larr; Prev post solr基础配置（结构化基于mysql）</a>
   
 
   
 
   
-    <a href="/2019/03/15/css控制文字竖排/" class="next">下一篇 css控制文字竖排 &rarr;</a>
+    <a href="/2019/03/15/Tomcat/" class="next">Next post Tomcat &rarr;</a>
   
 </nav>
 
@@ -190,9 +190,9 @@
     <div id="donate_board" class="donate_bar center">
         <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
         <span class="donate_txt">
-           ↑<br>
-           喜欢文章就打赏一包辣条吧！
-        </span>
+           &uarr;<br>
+           <%=theme.donate_message%>
+        </%=theme.donate_message%></span>
         <br>
       </div>  
     <div id="donate_guide" class="donate_bar center hidden">
@@ -208,11 +208,10 @@
                 <img src="<%- theme.root_url %><%=theme.Alipay%>"
                 <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
         -->
-        <!-- 支付宝打赏图案 
-        <img src="/images/aipay.jpg" alt="支付宝打赏"> -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/aipay.jpg" alt="支付宝打赏"> 
         <!-- 微信打赏图案 -->
         <img src="/images/wechat.jpg"" alt="微信打赏">
-
     </div>
     <script type="text/javascript">
         document.getElementById('btn_donate').onclick = function(){
@@ -342,6 +341,10 @@ var turnoffBackgroundImage = false;
 
 
 
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+  
 var backgroundColor = "34495E";
 
 $(".fancybox-thumb").fancybox({
@@ -380,7 +383,7 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
-</body>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
