@@ -1,0 +1,52 @@
+.donate_bar {
+    text-align: center;
+    margin-top: 5%
+}
+
+.donate_bar a.btn_donate { 
+    display: inline-block; 
+    width: 82px; 
+    height: 82px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat; 
+    -webkit-transition: background 0s; 
+    -moz-transition: background 0s; 
+    -o-transition: background 0s; 
+    -ms-transition: background 0s; 
+    transition: background 0s 
+} 
+
+.donate_bar a.btn_donate:hover { 
+    background-position: 0 -82px 
+} 
+
+.donate_bar .donate_txt { 
+    display: block; 
+    color: #9d9d9d; 
+    font: 14px/2 "Microsoft Yahei" 
+} 
+
+.donate_bar.hidden{ 
+    display: none 
+} 
+
+.post-donate{ 
+    margin-top: 45px; 
+}
+
+#donate_guide{ 
+    height: 310px; 
+    width: 500px; 
+    margin: 0 auto; 
+} 
+
+#donate_guide img{ 
+    height: 350px; 
+    height: 350px; 
+}
+--------------------- 
+作者：小红妹 
+来源：CSDN 
+原文：https://blog.csdn.net/l_201607/article/details/81097278 
+版权声明：本文为博主原创文章，转载请附上博文链接！
