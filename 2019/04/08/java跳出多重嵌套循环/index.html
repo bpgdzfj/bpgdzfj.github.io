@@ -123,12 +123,12 @@
   <article id="post">
     <h1>Java异常处理的五个关键字</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-04-08</span>
+      <span id="post-title-date">Created at 2019-04-08</span>
       
-        <span id="post-title-updated">修改于 2019-04-08</span>
+        <span id="post-title-updated">Updated at 2019-04-08</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -144,10 +144,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        method1();</span><br><span class="line">        method2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//方法2：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ok:<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++)&#123;</span><br><span class="line">                System.out.println(<span class="string">"i="</span>+i+<span class="string">",j="</span>+j);</span><br><span class="line">                <span class="keyword">if</span>(j==<span class="number">5</span>)&#123;</span><br><span class="line">                    <span class="keyword">break</span> ok;<span class="comment">//跳到循环外的ok出，即终止整个循环</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//方法2：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] arr = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">9</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">boolean</span> found = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length &amp;&amp; !found;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr[i].length;j++)&#123;</span><br><span class="line">                System.out.println(<span class="string">"i="</span>+i+<span class="string">",j="</span>+j);</span><br><span class="line">                <span class="keyword">if</span>(arr[i][j]==<span class="number">5</span>)&#123;</span><br><span class="line">                    found = <span class="keyword">true</span>;<span class="comment">//找到5，使外层循环判断条件变为false则终止整个循环</span></span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//跳出当前循环</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     
   </div>
 </div>
@@ -159,7 +159,7 @@
   
 
   
-    <a href="/2019/03/18/java异常处理/" class="next">下一篇 Java异常处理的五个关键字 &rarr;</a>
+    <a href="/2019/03/18/java异常处理/" class="next">Next post Java异常处理的五个关键字 &rarr;</a>
   
 </nav>
 
