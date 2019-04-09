@@ -140,12 +140,12 @@
   <article id="post">
     <h1>Java异常处理的五个关键字</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-18</span>
+      <span id="post-title-date">Created at 2019-03-18</span>
       
-        <span id="post-title-updated">修改于 2019-03-18</span>
+        <span id="post-title-updated">Updated at 2019-03-18</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -156,7 +156,7 @@
       
       
       <span id="post-title-tags">
-      标签
+      Tag
       
       
         
@@ -191,10 +191,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li></ol>
   </div>
 </div>
@@ -202,13 +202,13 @@
   
 <nav id="pagination">
   
-    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; 上一篇 Java中如何跳出当前的多重嵌套循环</a>
+    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; Prev post Java中如何跳出当前的多重嵌套循环</a>
   
 
   
 
   
-    <a href="/2019/03/18/slor基础配置/" class="next">下一篇 solr基础配置（结构化基于mysql） &rarr;</a>
+    <a href="/2019/03/18/slor基础配置/" class="next">Next post solr基础配置（结构化基于mysql） &rarr;</a>
   
 </nav>
 
@@ -274,15 +274,6 @@
 </div>
 
 
-<style>
-.post-copyright {
-    margin: 1em 0 0;
-    padding: 0.5em 1em;
-    border-left: 3px solid #ff1700;
-    background-color: #f9f9f9;
-    list-style: none;
-}
-</style>
 <div id="user-card">
   <div class="center-field">
     <img class="avatar" src="/images/header.jpg">
@@ -383,26 +374,6 @@ var turnoffBackgroundImage = false;
 
 
 
-<footer class="post-footer"> 原有内容
-<div>    
- 
- 
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-      <strong>本文作者：</strong>夏亚
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="/2019/03/18/java异常处理/" title="Java异常处理的五个关键字">2019/03/18/java异常处理/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权： </strong>
-    本站文章均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
-  </li>
-</ul>
-
-</div>
-
 var backgroundColor = "34495E";
 
 $(".fancybox-thumb").fancybox({
@@ -445,3 +416,23 @@ plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("07/08/2018 12:00:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+    
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
