@@ -140,12 +140,12 @@
   <article id="post">
     <h1>Java异常处理的五个关键字</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-18</span>
+      <span id="post-title-date">Created at 2019-03-18</span>
       
-        <span id="post-title-updated">修改于 2019-03-18</span>
+        <span id="post-title-updated">Updated at 2019-03-18</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -156,7 +156,7 @@
       
       
       <span id="post-title-tags">
-      标签
+      Tag
       
       
         
@@ -191,10 +191,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li></ol>
   </div>
 </div>
@@ -202,13 +202,13 @@
   
 <nav id="pagination">
   
-    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; 上一篇 Java中如何跳出当前的多重嵌套循环</a>
+    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; Prev post Java中如何跳出当前的多重嵌套循环</a>
   
 
   
 
   
-    <a href="/2019/03/18/slor基础配置/" class="next">下一篇 solr基础配置（结构化基于mysql） &rarr;</a>
+    <a href="/2019/03/18/slor基础配置/" class="next">Next post solr基础配置（结构化基于mysql） &rarr;</a>
   
 </nav>
 
@@ -312,9 +312,6 @@
 
 <div id="btn-view">Hide</div>
 
-<span id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-</span>
 <script>
 // is trigger analytics / tongji script
 var isIgnoreHost = false;
@@ -431,12 +428,10 @@ plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
             mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
             seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
             snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行:</br> "+dnum+" 天 "; 
             document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
         } 
     setInterval("createtime()",250);
     </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<br>
-<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv">0</span>次</span>
