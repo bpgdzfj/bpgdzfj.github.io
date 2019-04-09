@@ -134,12 +134,12 @@
   <article id="post">
     <h1>SpringBoot多模块项目搭建（一）</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-04-08</span>
+      <span id="post-title-date">Created at 2019-04-08</span>
       
-        <span id="post-title-updated">修改于 2019-04-09</span>
+        <span id="post-title-updated">Updated at 2019-04-09</span>
       
       
-      <span id="post-title-categories">分类
+      <span id="post-title-categories">Category
       
       
         
@@ -179,10 +179,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-开始搭建"><span class="toc-text">1.开始搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-New-Project-选择Spring-Initializr点击Next"><span class="toc-text">(1) New Project 选择Spring Initializr点击Next</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-选择SpringBoot版本后不选择任何依赖，点击Next。"><span class="toc-text">(2)选择SpringBoot版本后不选择任何依赖，点击Next。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-项目名称及路径写好后点击finish。"><span class="toc-text">(3)项目名称及路径写好后点击finish。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-创建父模块成功后修改pom文件将打包方式改成pom："><span class="toc-text">(4)创建父模块成功后修改pom文件将打包方式改成pom：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-多模块搭建"><span class="toc-text">2.多模块搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-删除刚才创建工程里的文件，-只保留-idea文件夹-和项目-pom-文件-以及一个-iml-文件-。"><span class="toc-text">(1)删除刚才创建工程里的文件， 只保留(.idea文件夹 , 和项目 pom 文件, 以及一个 *.iml 文件)。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建子-Module-先创建xy-base子工程。"><span class="toc-text">(2)创建子 Module 先创建xy-base子工程。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-选择Spring-Initializr点击Next："><span class="toc-text">(3)选择Spring Initializr点击Next：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-选择SpringBoot版本后选择sql—-jpa、mysql点击Next。"><span class="toc-text">(4)选择SpringBoot版本后选择sql—-jpa、mysql点击Next。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-创建成功后修改pom文件："><span class="toc-text">(5)创建成功后修改pom文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-创建xy-dao-xy-service-创建方法一样-这里只演示demo-dao的创建："><span class="toc-text">(6)创建xy-dao, xy-service 创建方法一样,这里只演示demo-dao的创建：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-创建xy-web模块与xy-dao基本完全相同，但是需要选择Web依赖。"><span class="toc-text">(7)创建xy-web模块与xy-dao基本完全相同，但是需要选择Web依赖。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-保留xy-web启动类及配置文件，其他的模块删除启动类及配置文件："><span class="toc-text">(8)保留xy-web启动类及配置文件，其他的模块删除启动类及配置文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-在xy-dao添加xy-base依赖："><span class="toc-text">(9)在xy-dao添加xy-base依赖：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-在xy-service添加xy-dao的依赖："><span class="toc-text">(10)在xy-service添加xy-dao的依赖：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-在xy-web添加xy-service的依赖："><span class="toc-text">(11)在xy-web添加xy-service的依赖：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-目录结构："><span class="toc-text">(12)目录结构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-yml配置："><span class="toc-text">(13)yml配置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-测试代码："><span class="toc-text">(14)测试代码：</span></a></li></ol></li></ol>
   </div>
 </div>
@@ -194,7 +194,7 @@
   
 
   
-    <a href="/2019/04/08/java跳出多重嵌套循环/" class="next">下一篇 Java中如何跳出当前的多重嵌套循环 &rarr;</a>
+    <a href="/2019/04/08/java跳出多重嵌套循环/" class="next">Next post Java中如何跳出当前的多重嵌套循环 &rarr;</a>
   
 </nav>
 
@@ -406,7 +406,7 @@ plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
     <script>
         var now = new Date(); 
         function createtime() { 
-            var grt= new Date("07/08/2018 17:09:00");//此处修改你的建站时间或者网站上线时间 
+            var grt= new Date("15/03/2018 17:09:00");//此处修改你的建站时间或者网站上线时间 
             now.setTime(now.getTime()+250); 
             days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
             hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
