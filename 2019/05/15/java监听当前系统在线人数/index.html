@@ -16,9 +16,12 @@
   
   
   
-    <meta name="description" content="禁止换行：1style=" white-space:nowrap;" 滚动条样式： 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 123456::-webkit-scrollbar&#123; width: 16px; height: background-color: #f5f5f5;&#125; 定义滚动条轨道 内阴影+圆角 123456::-w...">
+    <meta name="description" content="web.xml文件配置监听类全路径：
+1234&lt;!--在线人数监听--&gt;&lt;listener&gt;    &lt;listener-class&gt;cn.o.xxx.demo&lt;/listener-class&gt;&lt;/listener&gt;
+demo类继承接口：
+123456789101112131415161718192021222324252627282...">
   
-  <title>css禁止换行，及设置滚动条样式 [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>Java监听当前系统在线人数 [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -46,22 +49,13 @@
 <body>
 <div class="side-navigate hide-area">
   
-    <div class="item prev">
-      <a href="/2019/03/15/Tomcat/">
-        <div class="item-icon"></div>
-      </a>
-      <div class="item-title">
-        Tomcat
-      </div>
-    </div>
-  
   
     <div class="item next">
-      <a href="/2019/03/15/css控制文字竖排/">
+      <a href="/2019/04/08/springboot多模块搭建(一)/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        css控制文字竖排
+        SpringBoot多模块项目搭建（一）
       </div>
     </div>
   
@@ -138,11 +132,11 @@
   
 
   <article id="post">
-    <h1>css禁止换行，及设置滚动条样式</h1>
+    <h1>Java监听当前系统在线人数</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">撰写于 2019-03-15</span>
+      <span id="post-title-date">撰写于 2019-05-15</span>
       
-        <span id="post-title-updated">修改于 2019-03-15</span>
+        <span id="post-title-updated">修改于 2019-05-15</span>
       
       
       <span id="post-title-categories">分类
@@ -150,21 +144,28 @@
       
         
         
-        <a href="/categories/web前端/">web前端</a>
+        <a href="/categories/Java后台/">Java后台</a>
       
       </span>
       
       
+      <span id="post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/Java系统在线人数/">Java系统在线人数</a>
+      
+      </span>
+      
     </p>
     
-    <h1 id="禁止换行："><a href="#禁止换行：" class="headerlink" title="禁止换行："></a>禁止换行：</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">style="white-space:nowrap;"</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="滚动条样式："><a href="#滚动条样式：" class="headerlink" title="滚动条样式："></a>滚动条样式：</h2><p>/<em>定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸</em>/</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/<em>定义滚动条轨道 内阴影+圆角</em>/</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0,0,0,0.3);</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/<em>定义滑块 内阴影+圆角</em>/</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">6px</span> <span class="built_in">rgba</span>(0,0,0,.3);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#555</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>web.xml文件配置监听类全路径：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在线人数监听--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>cn.o.xxx.demo<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>demo类继承接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) ServletContextListener, HttpSessionListener, HttpSessionAttributeListener</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>) demo类如下：</span><br><span class="line">    <span class="keyword">private</span> ServletContext application = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">static</span> Map&lt;String,Integer&gt; onlineUserMap=<span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextInitialized</span><span class="params">(ServletContextEvent sce)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 容器初始化时，向application中存放一个空的容器</span></span><br><span class="line">        <span class="keyword">this</span>.application = sce.getServletContext();</span><br><span class="line">        <span class="keyword">this</span>.application.setAttribute(<span class="string">"onlineAccounts"</span>, <span class="keyword">new</span> ArrayList());</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextDestroyed</span><span class="params">(ServletContextEvent sce)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sessionCreated</span><span class="params">(HttpSessionEvent se)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sessionDestroyed</span><span class="params">(HttpSessionEvent se)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 将用户名称从列表中删除</span></span><br><span class="line">        List l = (List) <span class="keyword">this</span>.application.getAttribute(<span class="string">"onlineAccounts"</span>);</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Accounts account=(Accounts)se.getSession().getAttribute(<span class="string">"onlineAccountName"</span>);</span><br><span class="line">            <span class="comment">//判断帐号是否在this.application中，在的话移除</span></span><br><span class="line">            <span class="comment">//todo</span></span><br><span class="line">        &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attributeAdded</span><span class="params">(HttpSessionBindingEvent se)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果登陆成功，则将用户名保存在列表之中</span></span><br><span class="line">        <span class="keyword">if</span>(se!=<span class="keyword">null</span>&amp;&amp;se.getName()!=<span class="keyword">null</span>&amp;&amp;<span class="string">"onlineAccountName"</span>.equals(se.getName()))&#123;</span><br><span class="line">            <span class="comment">//只有登录成功后才会加入</span></span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                List l = (List) <span class="keyword">this</span>.application.getAttribute(<span class="string">"onlineAccounts"</span>);</span><br><span class="line">                <span class="comment">//判断登录账号是否在this.application中，不在则添加，在则不变</span></span><br><span class="line">                <span class="comment">//todo</span></span><br><span class="line">            &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attributeRemoved</span><span class="params">(HttpSessionBindingEvent se)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attributeReplaced</span><span class="params">(HttpSessionBindingEvent se)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>注意：在登录接口登录成功是添加session.setAttribute(“onlineAccountName”,account);否则不会进入demo监听。在系统退出时添加session注销。否则会等待session自动注销（默认30分钟，可配置）。</p>
 
   </article>
   <div class="random-toc-area">
@@ -172,20 +173,18 @@
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
     <h2>目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁止换行："><span class="toc-text">禁止换行：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#滚动条样式："><span class="toc-text">滚动条样式：</span></a></li></ol></li></ol>
+    
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2019/03/15/Tomcat/" class="prev">&larr; 上一篇 Tomcat</a>
-  
 
   
 
   
-    <a href="/2019/03/15/css控制文字竖排/" class="next">下一篇 css控制文字竖排 &rarr;</a>
+    <a href="/2019/04/08/springboot多模块搭建(一)/" class="next">下一篇 SpringBoot多模块项目搭建（一） &rarr;</a>
   
 </nav>
 
