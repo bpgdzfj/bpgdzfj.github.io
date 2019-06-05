@@ -1,0 +1,436 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="中文">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="夏亚">
+  
+  
+  
+  
+    <meta name="description" content="（一）创建Maven工程​    
+​    
+​     创建项目名称后点击finish
+（二）添加容器依赖查看Maven的容器包：​        
+手动添加容器依赖：12345678&lt;!--spring容器依赖--&gt;&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.springframe...">
+  
+  <title>Spring组件注册@bean标签（一） [ 进入 洋山芋·土豆 小世界 ]</title>
+  
+  
+    <link rel="shortcut icon" href="/hollow.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2019/04/08/java跳出多重嵌套循环/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Java中如何跳出当前的多重嵌套循环
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2019/03/18/java异常处理/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Java异常处理的五个关键字
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onclick="openUserCard()">
+          <img id="avatar" src="/images/header.jpg">
+          <div id="homelink">进入 洋山芋·土豆 小世界</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/bpgdzfj">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  
+
+  <article id="post">
+    <h1>Spring组件注册@bean标签（一）</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">撰写于 2019-03-18</span>
+      
+        <span id="post-title-updated">修改于 2019-06-05</span>
+      
+      
+      <span id="post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/Spring深度解析/">Spring深度解析</a>
+      
+      </span>
+      
+      
+      <span id="post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/Spring/">Spring</a>
+      
+      </span>
+      
+    </p>
+    
+    <h3 id="（一）创建Maven工程"><a href="#（一）创建Maven工程" class="headerlink" title="（一）创建Maven工程"></a>（一）创建Maven工程</h3><p>​    <img src="\images\Spring\001.jpg" alt></p>
+<p>​    <img src="\images\Spring\002.jpg" alt></p>
+<p>​     创建项目名称后点击finish</p>
+<h3 id="（二）添加容器依赖"><a href="#（二）添加容器依赖" class="headerlink" title="（二）添加容器依赖"></a>（二）添加容器依赖</h3><h6 id="查看Maven的容器包："><a href="#查看Maven的容器包：" class="headerlink" title="查看Maven的容器包："></a>查看Maven的容器包：</h6><p>​        <img src="\images\Spring\003.jpg" alt></p>
+<h6 id="手动添加容器依赖："><a href="#手动添加容器依赖：" class="headerlink" title="手动添加容器依赖："></a>手动添加容器依赖：</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--spring容器依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="（三）添加实体类"><a href="#（三）添加实体类" class="headerlink" title="（三）添加实体类"></a>（三）添加实体类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">private</span> Integer age;<span class="comment">//年龄</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有参构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//无参构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（四）添加spring配置文件将bean标签注入容器"><a href="#（四）添加spring配置文件将bean标签注入容器" class="headerlink" title="（四）添加spring配置文件将bean标签注入容器"></a>（四）添加spring配置文件将bean标签注入容器</h3><h6 id="在resources下添加spring配置文件："><a href="#在resources下添加spring配置文件：" class="headerlink" title="在resources下添加spring配置文件："></a>在resources下添加spring配置文件：</h6><p>​        <img src="\images\Spring\004.jpg" alt></p>
+<h6 id="添加bean标签："><a href="#添加bean标签：" class="headerlink" title="添加bean标签："></a>添加bean标签：</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"com.xy.pojo.Person"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"陈磊"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"27"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="（五）添加主函数测试"><a href="#（五）添加主函数测试" class="headerlink" title="（五）添加主函数测试"></a>（五）添加主函数测试</h3><p>​    添加主函数测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ApplicationContext applicationContext=<span class="keyword">new</span> 			           ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">        Person person=applicationContext.getBean(Person.class);</span><br><span class="line">        System.out.println(person.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（六）目录结构及主函数运行结果："><a href="#（六）目录结构及主函数运行结果：" class="headerlink" title="（六）目录结构及主函数运行结果："></a>（六）目录结构及主函数运行结果：</h3><p>​    <img src="\images\Spring\005.jpg" alt></p>
+<p>​    <img src="\images\Spring\006.jpg" alt></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）创建Maven工程"><span class="toc-text">（一）创建Maven工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）添加容器依赖"><span class="toc-text">（二）添加容器依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看Maven的容器包："><span class="toc-text">查看Maven的容器包：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#手动添加容器依赖："><span class="toc-text">手动添加容器依赖：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）添加实体类"><span class="toc-text">（三）添加实体类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）添加spring配置文件将bean标签注入容器"><span class="toc-text">（四）添加spring配置文件将bean标签注入容器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#在resources下添加spring配置文件："><span class="toc-text">在resources下添加spring配置文件：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#添加bean标签："><span class="toc-text">添加bean标签：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（五）添加主函数测试"><span class="toc-text">（五）添加主函数测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（六）目录结构及主函数运行结果："><span class="toc-text">（六）目录结构及主函数运行结果：</span></a></li>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2019/04/08/java跳出多重嵌套循环/" class="prev">&larr; 上一篇 Java中如何跳出当前的多重嵌套循环</a>
+  
+
+  
+
+  
+    <a href="/2019/03/18/java异常处理/" class="next">下一篇 Java异常处理的五个关键字 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+  
+    <! -- 添加捐赠图标 -->
+<link href="/css/donate.css" rel="stylesheet">
+<div class="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+       <span class="donate_txt">
+           ↑<br>
+           喜欢文章就打赏一包辣条吧！
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden">
+        <!-- 方式一：
+            ![](http://bmob-cdn-20430.b0.upaiyun.com/2018/07/16/818aaf3940fcb81b80cec7fb39bcb0b2.png)
+            ![](http://bmob-cdn-20430.b0.upaiyun.com/2018/07/16/b1be33f440b853398031437a9276fa90.png)
+         -->
+        <!-- 方式二；
+            step1：在_config.yml中添加配置
+                Alipay: /img/Alipay.jpg
+                WeChatpay: /img/WeChatpay.jpg
+            step2：此处两张图片的路径分别设置为如下
+                <img src="<%- theme.root_url %><%=theme.Alipay%>"
+                <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
+        -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/aipay.jpg" alt="支付宝打赏"> 
+        <!-- 微信打赏图案
+        <img src=/images/wechat.jpg" alt="微信打赏"> -->
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<! -- 添加捐赠图标 -->
+  
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by 夏亚 using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="/images/header.jpg">
+    <p id="description">每天搬点砖，总有一天是大厦。</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/bpgdzfj">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://weibo.com/u/5092895966">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="mailto:wulidan0530@live.com">
+        
+          M
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":1500000,"shuffle":true,"count":12};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("03/15/2019 17:09:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行:</br> "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<br>
+<span id="busuanzi_container_site_pv">
+    本站总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
