@@ -16,9 +16,9 @@
   
   
   
-    <meta name="description" content="（一）基于Spring组件注册@bean标签（一）创建配置类：12345678@Configuration//配置类注解（等同于配置文件）,告诉spring是一个配置类public class MainConfig &#123;    //给容器注册一个bean，类型为返回值的类型，id是方法名    @Bean    public Person person()&#123;        ...">
+    <meta name="description" content="Spring自动扫描自定义扫描规则（一）基于自动扫描指定扫描规则（一）（二）添加自定义类123456789101112131415161718192021222324252627282930public class MyTypeFilter implements TypeFilter&#123;    /**     * show     *     * @author xy     * @...">
   
-  <title>Spring组件注册@bean标签（二） [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>Spring自动扫描（二） [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -46,22 +46,13 @@
 <body>
 <div class="side-navigate hide-area">
   
-    <div class="item prev">
+  
+    <div class="item next">
       <a href="/2019/06/05/spring源码解析-自动扫描（自定义扫描规则）/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
         Spring自动扫描（一）
-      </div>
-    </div>
-  
-  
-    <div class="item next">
-      <a href="/2019/06/05/spring源码解析-bean组件注册（配置文件）/">
-        <div class="item-icon"></div>
-      </a>
-      <div class="item-title">
-        Spring组件注册@bean标签（一）
       </div>
     </div>
   
@@ -138,11 +129,11 @@
   
 
   <article id="post">
-    <h1>Spring组件注册@bean标签（二）</h1>
+    <h1>Spring自动扫描（二）</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">Created at 2019-06-05</span>
+      <span id="post-title-date">Created at 2019-06-11</span>
       
-        <span id="post-title-updated">Updated at 2019-06-05</span>
+        <span id="post-title-updated">Updated at 2019-06-11</span>
       
       
       <span id="post-title-categories">Category
@@ -167,9 +158,11 @@
       
     </p>
     
-    <h3 id="（一）基于Spring组件注册-bean标签（一）"><a href="#（一）基于Spring组件注册-bean标签（一）" class="headerlink" title="（一）基于Spring组件注册@bean标签（一）"></a>（一）基于Spring组件注册@bean标签（一）</h3><h6 id="创建配置类："><a href="#创建配置类：" class="headerlink" title="创建配置类："></a>创建配置类：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span><span class="comment">//配置类注解（等同于配置文件）,告诉spring是一个配置类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//给容器注册一个bean，类型为返回值的类型，id是方法名</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person <span class="title">person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Person(<span class="string">"陈磊1"</span>,<span class="number">27</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="（二）主函数测试"><a href="#（二）主函数测试" class="headerlink" title="（二）主函数测试"></a>（二）主函数测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ApplicationContext applicationContext=<span class="keyword">new</span> AnnotationConfigApplicationContext(MainConfig.class);</span><br><span class="line">    Person person= (Person) applicationContext.getBean(<span class="string">"person"</span>);</span><br><span class="line">    System.out.println(person.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="（三）主函数运行结果："><a href="#（三）主函数运行结果：" class="headerlink" title="（三）主函数运行结果："></a>（三）主函数运行结果：</h3><p>​    <img src="\images\Spring\007.jpg" alt></p>
+    <h1 id="Spring自动扫描自定义扫描规则"><a href="#Spring自动扫描自定义扫描规则" class="headerlink" title="Spring自动扫描自定义扫描规则"></a>Spring自动扫描自定义扫描规则</h1><h3 id="（一）基于自动扫描指定扫描规则（一）"><a href="#（一）基于自动扫描指定扫描规则（一）" class="headerlink" title="（一）基于自动扫描指定扫描规则（一）"></a>（一）基于自动扫描指定扫描规则（一）</h3><h3 id="（二）添加自定义类"><a href="#（二）添加自定义类" class="headerlink" title="（二）添加自定义类"></a>（二）添加自定义类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTypeFilter</span> <span class="keyword">implements</span> <span class="title">TypeFilter</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * show</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> xy</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@date</span> 15:18 2019/6/11</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  metadataReader 读取到当前正在扫描的类的信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  metadataReaderFactory 可以获取其他任何类的信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Exception</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">match</span><span class="params">(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//获取当前注解信息</span></span><br><span class="line">        AnnotationMetadata annotationMetadata=metadataReader.getAnnotationMetadata();</span><br><span class="line">        <span class="comment">//获取当前正在扫描的类信息</span></span><br><span class="line">        ClassMetadata classMetadata=metadataReader.getClassMetadata();</span><br><span class="line">        <span class="comment">//获取当前类资源（类路径）</span></span><br><span class="line">        Resource resource=metadataReader.getResource();</span><br><span class="line"></span><br><span class="line">        String className=classMetadata.getClassName();</span><br><span class="line">        <span class="keyword">if</span>(className.contains(<span class="string">"Person"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（三）配置类添加自定义扫描类型"><a href="#（三）配置类添加自定义扫描类型" class="headerlink" title="（三）配置类添加自定义扫描类型"></a>（三）配置类添加自定义扫描类型</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span><span class="comment">//配置类注解（等同于配置文件）,告诉spring是一个配置类</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(value = <span class="string">"com.xy"</span>,includeFilters=&#123;</span><br><span class="line">        <span class="meta">@ComponentScan</span>.Filter(type=FilterType.CUSTOM,classes=MyTypeFilter.class)</span><br><span class="line">&#125;,useDefaultFilters = <span class="keyword">false</span>)</span><br><span class="line"><span class="comment">//ComponentScan value:指定要扫描的包</span></span><br><span class="line"><span class="comment">//excludeFilters 排除文件</span></span><br><span class="line"><span class="comment">//ComponentScan.Filter type:扫描文件类型</span></span><br><span class="line"><span class="comment">//ComponentScan.Filter classes:Controller类</span></span><br><span class="line"><span class="comment">//FilterType.CUSTOM 自定义扫描</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//给容器注册一个bean，类型为返回值的类型，id是方法名</span></span><br><span class="line">    <span class="meta">@Bean</span>(name=<span class="string">"person"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person <span class="title">person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Person(<span class="string">"陈磊1"</span>,<span class="number">27</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面执行测试类结果:</p>
+<p><img src="\images\Spring\12.jpg" alt></p>
+<h3 id="（四）目录结构"><a href="#（四）目录结构" class="headerlink" title="（四）目录结构"></a>（四）目录结构</h3><p><img src="\images\Spring\013.jpg" alt></p>
 
   </article>
   <div class="random-toc-area">
@@ -177,20 +170,18 @@
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）基于Spring组件注册-bean标签（一）"><span class="toc-text">（一）基于Spring组件注册@bean标签（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建配置类："><span class="toc-text">创建配置类：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）主函数测试"><span class="toc-text">（二）主函数测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）主函数运行结果："><span class="toc-text">（三）主函数运行结果：</span></a></li>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring自动扫描自定义扫描规则"><span class="toc-text">Spring自动扫描自定义扫描规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（一）基于自动扫描指定扫描规则（一）"><span class="toc-text">（一）基于自动扫描指定扫描规则（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（二）添加自定义类"><span class="toc-text">（二）添加自定义类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（三）配置类添加自定义扫描类型"><span class="toc-text">（三）配置类添加自定义扫描类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（四）目录结构"><span class="toc-text">（四）目录结构</span></a></li></ol></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2019/06/05/spring源码解析-自动扫描（自定义扫描规则）/" class="prev">&larr; Prev post Spring自动扫描（一）</a>
-  
 
   
 
   
-    <a href="/2019/06/05/spring源码解析-bean组件注册（配置文件）/" class="next">Next post Spring组件注册@bean标签（一） &rarr;</a>
+    <a href="/2019/06/05/spring源码解析-自动扫描（自定义扫描规则）/" class="next">Next post Spring自动扫描（一） &rarr;</a>
   
 </nav>
 
