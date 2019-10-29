@@ -16,11 +16,10 @@
   
   
   
-    <meta name="description" content="java函数字符串比较1Objects.equals(name, thisName);
-判断列表为空123import org.apache.commons.collections4.CollectionUtils;CollectionUtils.isNotEmpty(list);
-当传入参数过多时，应封装为参数类123456789101112131415161718// 修改用户函数pub...">
+    <meta name="description" content="(1)redis启动12redis目录下执行：redis-server redis.windows.conf
+(2)tomcat启动12345678910到tomcat的bin下:先执行关闭 ./shutdown.sh启动 ./startup.sh如果关闭不成功需要将端口释放（需要查看tomcat的运行暂用的）：查看运行的tomcat  ps -ef | grep tomcat找到对应的ro...">
   
-  <title>java优雅之道 [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>linux+tomcat+redis [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -49,21 +48,21 @@
 <div class="side-navigate hide-area">
   
     <div class="item prev">
-      <a href="/2019/10/29/linux+tomcat+redis/">
+      <a href="/2019/10/29/linux常用命令/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        linux+tomcat+redis
+        linux常用命令
       </div>
     </div>
   
   
     <div class="item next">
-      <a href="/2019/06/11/spring源码解析-自动扫描（指定扫描规则）/">
+      <a href="/2019/09/19/java优雅之道/">
         <div class="item-icon"></div>
       </a>
       <div class="item-title">
-        Spring自动扫描（二）
+        java优雅之道
       </div>
     </div>
   
@@ -140,11 +139,11 @@
   
 
   <article id="post">
-    <h1>java优雅之道</h1>
+    <h1>linux+tomcat+redis</h1>
     <p class="page-title-sub">
-      <span id="post-title-date">Created at 2019-09-19</span>
+      <span id="post-title-date">Created at 2019-10-29</span>
       
-        <span id="post-title-updated">Updated at 2019-10-08</span>
+        <span id="post-title-updated">Updated at 2019-10-29</span>
       
       
       <span id="post-title-categories">Category
@@ -152,16 +151,18 @@
       
         
         
-        <a href="/categories/Java后台/">Java后台</a>
+        <a href="/categories/Linux/">Linux</a>
       
       </span>
       
       
     </p>
     
-    <h1 id="java函数"><a href="#java函数" class="headerlink" title="java函数"></a>java函数</h1><h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Objects.equals(name, thisName);</span><br></pre></td></tr></table></figure>
-<h3 id="判断列表为空"><a href="#判断列表为空" class="headerlink" title="判断列表为空"></a>判断列表为空</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.commons</span><span class="selector-class">.collections4</span><span class="selector-class">.CollectionUtils</span>;</span><br><span class="line"><span class="selector-tag">CollectionUtils</span><span class="selector-class">.isNotEmpty</span>(<span class="selector-tag">list</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="当传入参数过多时，应封装为参数类"><a href="#当传入参数过多时，应封装为参数类" class="headerlink" title="当传入参数过多时，应封装为参数类"></a>当传入参数过多时，应封装为参数类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改用户函数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">modifyUser</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 具体实现内容</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用户类</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String phone;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> Integer sex;</span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="1-redis启动"><a href="#1-redis启动" class="headerlink" title="(1)redis启动"></a>(1)redis启动</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis目录下执行：</span><br><span class="line">redis-server redis.windows.conf</span><br></pre></td></tr></table></figure>
+<h2 id="2-tomcat启动"><a href="#2-tomcat启动" class="headerlink" title="(2)tomcat启动"></a>(2)tomcat启动</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">到tomcat的bin下:</span><br><span class="line">先执行关闭 ./shutdown.sh</span><br><span class="line">启动 ./startup.sh</span><br><span class="line"></span><br><span class="line">如果关闭不成功需要将端口释放（需要查看tomcat的运行暂用的）：</span><br><span class="line">查看运行的tomcat  ps -ef | grep tomcat</span><br><span class="line">找到对应的root，并杀掉进程    kill -9 root</span><br><span class="line"></span><br><span class="line">查看tomcat控制台：</span><br><span class="line">到log目录下执行    tail -f catalina.out</span><br></pre></td></tr></table></figure>
+<h2 id="3-解压zip或者rar文件-前提已经安装zip及rar的解压软件"><a href="#3-解压zip或者rar文件-前提已经安装zip及rar的解压软件" class="headerlink" title="(3)解压zip或者rar文件(前提已经安装zip及rar的解压软件)"></a>(3)解压zip或者rar文件(前提已经安装zip及rar的解压软件)</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rar文件解压    unrar file</span><br><span class="line">zip文件解压    unzip file</span><br></pre></td></tr></table></figure>
+<h2 id="4-复制文件到某个目录下"><a href="#4-复制文件到某个目录下" class="headerlink" title="(4)复制文件到某个目录下"></a>(4)复制文件到某个目录下</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将a文件复制到b目录下：</span><br><span class="line">cp a文件路径 b路径下</span><br></pre></td></tr></table></figure>
+<h2 id="5-查看端口使用情况"><a href="#5-查看端口使用情况" class="headerlink" title="(5)查看端口使用情况"></a>(5)查看端口使用情况</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:端口号</span><br><span class="line"># lsof -i:8000</span><br><span class="line">COMMAND   PID USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME</span><br><span class="line">lwfs    22065 root    6u  IPv4 4395053      0t0  TCP *:irdmi (LISTEN)</span><br><span class="line">可以看到8000端口已经被轻量级文件系统转发服务lwfs占用</span><br></pre></td></tr></table></figure>
 
   </article>
   <div class="random-toc-area">
@@ -169,20 +170,20 @@
   <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
     <h2>Table of Content</h2>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java函数"><span class="toc-text">java函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串比较"><span class="toc-text">字符串比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断列表为空"><span class="toc-text">判断列表为空</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当传入参数过多时，应封装为参数类"><span class="toc-text">当传入参数过多时，应封装为参数类</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-redis启动"><span class="toc-text">(1)redis启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-tomcat启动"><span class="toc-text">(2)tomcat启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-解压zip或者rar文件-前提已经安装zip及rar的解压软件"><span class="toc-text">(3)解压zip或者rar文件(前提已经安装zip及rar的解压软件)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-复制文件到某个目录下"><span class="toc-text">(4)复制文件到某个目录下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-查看端口使用情况"><span class="toc-text">(5)查看端口使用情况</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2019/10/29/linux+tomcat+redis/" class="prev">&larr; Prev post linux+tomcat+redis</a>
+    <a href="/2019/10/29/linux常用命令/" class="prev">&larr; Prev post linux常用命令</a>
   
 
   
 
   
-    <a href="/2019/06/11/spring源码解析-自动扫描（指定扫描规则）/" class="next">Next post Spring自动扫描（二） &rarr;</a>
+    <a href="/2019/09/19/java优雅之道/" class="next">Next post java优雅之道 &rarr;</a>
   
 </nav>
 
