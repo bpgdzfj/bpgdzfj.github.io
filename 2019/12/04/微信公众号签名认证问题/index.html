@@ -2,8 +2,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,10 @@
   
   
   
-    <meta name="description" content="每天搬点砖，总有一天是大厦。">
+    <meta name="description" content="（1）确保基本的appid 正确，获取的access_token和jsapi_ticket 正确。（2）校验签名，可用 http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign 页面工具进行校验。（3）如果签名一致，那问题基本出在浏览器访问的url和参与生成签名的url不一致。
+我遇到的是第三个情况，我使用微信开发者工具发现请求参数u...">
   
-  <title>Category: web前端 [ 进入 洋山芋·土豆 小世界 ]</title>
+  <title>微信公众号签名认证问题 [ 进入 洋山芋·土豆 小世界 ]</title>
   
   
     <link rel="shortcut icon" href="/hollow.ico">
@@ -48,6 +47,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2019/10/29/linux+tomcat+redis/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        linux+tomcat+redis
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -87,7 +95,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">Categories</a>
             
@@ -119,249 +127,104 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
-      
-        <h1 class="center-title">
-          Category
-          
-        </h1>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    <ul class="category-list">
-      
-        <li class="category-list-item">
-        
-          <a class="active" href="/categories/web前端/">web前端</a>
-        
-          <span class="category-list-count">2</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Java后台/">Java后台</a>
-        
-          <span class="category-list-count">4</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/tomcat相关/">tomcat相关</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Linux/">Linux</a>
-        
-          <span class="category-list-count">2</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/搜索引擎/">搜索引擎</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/SpringBoot/">SpringBoot</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Spring深度解析/">Spring深度解析</a>
-        
-          <span class="category-list-count">4</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/微信公众号签名认证后台-java/">微信公众号签名认证后台-java</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-    </ul>
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
   
-  <a href="/2019/03/15/css控制文字竖排/">
-  
-    css控制文字竖排
-  
-  </a>
-  <p class="page-title-sub">
-    <span id="post-title-date">3-15</span>
-    
-    <span id="post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/web前端/">web前端</a>
-    
-    </span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2019/03/15/css禁止换行及滚动条设置/">
-  
-    css禁止换行，及设置滚动条样式
-  
-  </a>
-  <p class="page-title-sub">
-    <span id="post-title-date">3-15</span>
-    
-    <span id="post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/web前端/">web前端</a>
-    
-    </span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-  </article>
 
+  <article id="post">
+    <h1>微信公众号签名认证问题</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">Created at 2019-12-04</span>
+      
+        <span id="post-title-updated">Updated at 2019-12-04</span>
+      
+      
+      <span id="post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/微信公众号签名认证后台-java/">微信公众号签名认证后台-java</a>
+      
+      </span>
+      
+      
+      <span id="post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/微信公众号/">微信公众号</a>
+      
+      </span>
+      
+    </p>
+    
+    <p>（1）确保基本的appid 正确，获取的access_token和jsapi_ticket 正确。<br>（2）校验签名，可用 <a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign" target="_blank" rel="noopener">http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign</a> 页面工具进行校验。<br>（3）如果签名一致，那问题基本出在<strong>浏览器访问的url和参与生成签名的url不一致</strong>。</p>
+<p>我遇到的是第三个情况，我使用微信开发者工具发现请求参数url后面拼接多个参数。然而微信端使用的<u><strong>get请求</strong></u>，导致从第二个参数起被识别为接口的参数，导致url后面的参数丢失，最终导致签名失败。后面微信点调整请求方式，<strong><u>使用post</u></strong>，问题立马解决。</p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2019/10/29/linux+tomcat+redis/" class="next">Next post linux+tomcat+redis &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+  
+    <! -- 添加捐赠图标 -->
+<link href="/css/donate.css" rel="stylesheet">
+<div class="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+       <span class="donate_txt">
+           ↑<br>
+           喜欢文章就打赏一包辣条吧！
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden">
+        <!-- 方式一：
+            ![](http://bmob-cdn-20430.b0.upaiyun.com/2018/07/16/818aaf3940fcb81b80cec7fb39bcb0b2.png)
+            ![](http://bmob-cdn-20430.b0.upaiyun.com/2018/07/16/b1be33f440b853398031437a9276fa90.png)
+         -->
+        <!-- 方式二；
+            step1：在_config.yml中添加配置
+                Alipay: /img/Alipay.jpg
+                WeChatpay: /img/WeChatpay.jpg
+            step2：此处两张图片的路径分别设置为如下
+                <img src="<%- theme.root_url %><%=theme.Alipay%>"
+                <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
+        -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/aipay.jpg" alt="支付宝打赏"> 
+        <!-- 微信打赏图案
+        <img src=/images/wechat.jpg" alt="微信打赏"> -->
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<! -- 添加捐赠图标 -->
   
 
       
